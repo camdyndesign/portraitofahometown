@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
+  <title>About</title>
+  <link rel="icon" href="images/favicon_ws.png">
+
+  <!-- Get access to fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/lbj8dzc.css">
+  <!-- Load external style sheet -->
+  <link href="css/reset.css" type="text/css" rel="stylesheet">
+  <link href="css/responsive-nav.css" type="text/css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet" />
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/33003a8b85.js" crossorigin="anonymous"></script>
+
+<style>
+
+#aboutskyline{
+  position: relative;
+  height: auto;
+  width: 100vw;
+  margin-top: 20px;
+  margin-bottom: -55px;
+  overflow: hidden;
+}
+
+#skyline{
+  width:100%;
+}
+
+@media screen and (max-width: 768px) {
+  #skyline{
+  width: 200%;
+  margin-left:-150px;
+}
+
+}
+
+</style>
+
+<script src="js/responsive-nav.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="navigation">
+      <a href="index.html"><img id="navlogo" src="images/logos/logo_horizontal.svg" height="60px" width="200px">
+      </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <br class="br-on-mobile">
+          <li><a href="timeline.html">Timeline</a></li>
+          <br class="br-on-mobile">
+          <li><a href="about.html">About</a></li>
+          <br class="br-on-mobile">
+          <br class="br-on-mobile">
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<div class="maincontent">
+  <h1>About the Project</h1>
+  <h4>I&#39ve always thought my hometown was pretty awesome!</h4>
+  <p>Known as the City of Arts and Innovation, where <a class="highlight" href="reynoldsbuilding.html">corporate headquarters in skyscrapers</a> sit beside historic homes from colonial America. I find it crazy that this was the place I grew up. I&#39ve walked <a href="oldsalem.html" class="highlight">the same paths as George Washington</a> and I&#39ve sat in <a href="reynoldsauditorium.html" class="highlight">theater seats where audiences watched Harry Houdini perform</a>. I think there are so many fascinating stories to be told about my hometown. This interactive website explores the historical narrative of the city with anecdotes of my own memories and perspectives. Through interactive elements and hyperlinks, different aspects of the city are woven together and presented in a casual and somewhat humorous manner. </p>
+  <p class="indent"> When a place is your hometown, you view it as the setting of your everyday life, full of the mundane but also the extremely personal. As a visitor, you often consider the historical significance of a place or the special events that have occurred, rather than considering the everyday experience. </p>
+  <p>This project is my way of exploring the overlap between the stories that will be forever documented in the historical narrative of Winston-Salem as well as my own experiences and perspectives of the city as a hometown. </p>
+  <h4>I invite you, as you explore my hometown, to consider the portrait of your own hometown...</h4>
+</div>
+
+<div id="aboutskyline">
+  <img id="skyline" style="margin-bottom:-50;" src="images/logos/skyline_bw.jpg" width="100%">
+</div>
+
+<footer>
+  <div class="footercontainer">
+    <a href="index.html"><img id="footerlogo" src="images/logos/logo_vertical.svg" width="150px">
+    </a>
+
+    <div class="footercontent">
+      <div>
+        <nav class="footerlinks">
+          <ul>
+            <li><a href="map.html">Map</a></li>
+            <br>
+            <li><a href="timeline.html">Timeline</a></li>
+            <br>
+            <li><a href="about.html">About</a></li>
+            <br>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div>
+      <nav class="footerlinks">
+        <ul>
+          <li>PLACES</li>
+          <br>
+        </ul>
+          <div class="footercontent">
+            <div>
+              <a class="footerplacelinks" href="bowmangraystadium.html"><p>Bowman Gray Stadium</p></a>
+              <a class="footerplacelinks" href="krispykreme.html"><p>Krispy Kreme</p></a>
+              <a class="footerplacelinks" href="bethabarapark.html"><p>Historic Bethabara Park</p></a>
+              <a class="footerplacelinks" href="oldsalem.html"><p>Old Salem</p></a>
+            </div>
+            <div>
+              <a class="footerplacelinks" href="reynoldahouse.html"><p>Reynolda House</p></a>
+              <a class="footerplacelinks" href="reynoldsauditorium.html"><p>Reynolds Auditorium</p></a>
+              <a class="footerplacelinks" href="reynoldsbuilding.html"><p>Reynolds Building</p></a>
+              <a class="footerplacelinks" href="truiststadium.html"><p>Truist Stadium</p></a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+  </div>
+</footer>
+
+
+<script>
+  var navigation = responsiveNav(".nav-collapse", {
+    animate: true, // Boolean: Use CSS3 transitions, true or false
+    transition: 284, // Integer: Speed of the transition, in milliseconds
+    label: "Menu", // String: Label for the navigation toggle
+    insert: "before", // String: Insert the toggle before or after the navigation
+    customToggle: "", // Selector: Specify the ID of a custom toggle
+    closeOnNavClick: false, // Boolean: Close the navigation when one of the links are clicked
+    openPos: "static", // String: Position of the opened nav, relative or static
+    navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!
+    navActiveClass: "js-nav-active", // String: Class that is added to <html> element when nav is active
+    jsClass: "js", // String: 'JS enabled' class which is added to <html> element
+    init: function () { }, // Function: Init callback
+    open: function () { }, // Function: Open callback
+    close: function () { } // Function: Close callback
+  });
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js/lightbox.js"></script>
+
+<script>
+  lightbox.option({
+    'disableScrolling': true,
+    'fadeDuration': 300,
+    'imageFadeDuration': 800,
+    'resizeDuration': 200,
+    'wrapAround': false
+  })
+</script>
+
+</body>
+
+</html>

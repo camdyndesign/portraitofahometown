@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
+  <title>Home</title>
+  <link rel="icon" href="images/favicon_ws.png">
+
+  <!-- Get access to fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/lbj8dzc.css">
+  <!-- Load external style sheet -->
+  <link href="css/reset.css" type="text/css" rel="stylesheet">
+  <link href="css/responsive-nav.css" type="text/css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet" />
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/33003a8b85.js" crossorigin="anonymous"></script>
+
+<style>
+
+#welcomelanding{
+  position: relative;
+  display:block;
+  height: calc(100vh - 70px);
+  max-width: 100%;
+  background: linear-gradient(0deg, #f6bb8b, #4169c1);
+  z-index: -2;
+}
+
+#welcometext{
+  position: fixed;
+  left: 25%;
+  top: auto;
+  right: 30%;
+  bottom: 300px;
+  width: 50%;
+  z-index: -1;
+}
+
+#skyline{
+  position: relative;
+  background-image: url("images/logos/skyline_color.png");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  /* bottom: 0; */
+  z-index: 10;
+}
+
+#about{
+  width: 90%;
+  padding: 80px 0px;
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
+#places{
+  width: 90%;
+  padding: 80px 0px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+#placeslist{
+  display:grid;
+  grid-template-columns: auto auto auto;
+}
+
+#card{
+  padding: 30px 20px;
+}
+
+.linktoplace{
+  height:25px;
+  width:fit-content;
+  display: block;
+  padding: 10px 5px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #4169c1;
+}
+
+.linktext{
+  transform: translateX(8px);
+  float: left;
+}
+
+.linkarrow{
+  margin-top: 5px;
+  float: left;
+  transform: translateX(-15px);
+  opacity: 0;
+  color:#4169c1;
+}
+
+.linktoplace:hover .linktext{
+  transform: translateX(0px);
+  opacity: 1;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  /* text-decoration: dotted;
+  background-color: blue; */
+}
+
+.linktoplace:hover .linkarrow{
+  transform: translateX(8px);
+  opacity: 1;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+  /* text-decoration: dotted;
+  background-color: blue; */
+}
+
+@media screen and (max-width: 1000px) {
+
+  #placeslist{
+  display:grid;
+  grid-template-columns: auto auto;
+  }
+  
+}
+
+@media screen and (max-width: 800px) {
+  #welcometext{
+  left: 10%;
+  top: auto;
+  right: 10%;
+  bottom: 450px;
+  width: 80%;
+  }
+
+  #welcomelanding{
+  height: calc(80vh - 70px);
+  }
+
+  #placeslist{
+  display:grid;
+  grid-template-columns: auto;
+  }
+  
+
+}
+
+@media screen and (max-width: 500px) {
+  #welcomelanding{
+  height: calc(80vh - 70px);
+  }
+
+}
+
+</style>
+
+<script src="js/responsive-nav.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="navigation">
+      <a href="index.html"><img id="navlogo" src="images/logos/logo_horizontal.svg" height="60px" width="200px">
+      </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <br class="br-on-mobile">
+          <li><a href="timeline.html">Timeline</a></li>
+          <br class="br-on-mobile">
+          <li><a href="about.html">About</a></li>
+          <br class="br-on-mobile">
+          <br class="br-on-mobile">
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<div id="welcomelanding">
+<img id="welcometext" src="images/logos/welcome_logo.svg">
+<div id="skyline"></div>
+</div>
+
+<div id="about">
+  <h2>
+    About the Project
+  </h2>
+  <p>
+    This project is my way of exploring the overlap between the stories that will be forever documented in the historical narrative of Winston-Salem as well as my own experiences and perspectives of the city as a hometown.
+  </p>
+  <a href="about.html">
+  <button>
+    Learn More
+  </button>
+</a>
+</div>
+
+<div id="places">
+  <h2>
+    Places to Explore
+  </h2>
+
+  <div id="placeslist">
+
+    <div id="card">
+      <img class="placeimage" src="images/icons/bowmangray_stadium.png" style="padding:10px 0px" height="80px">
+      <h3>Bowman Gray Stadium</h3>
+      <div class="linktoplace">
+        <a href="bowmangraystadium.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/krispykreme.png" style="padding:10px 0px"  height="80px">
+      <h3>Krispy Kreme</h3>
+      <div class="linktoplace">
+        <a href="krispykreme.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/bethabara-park.png" style="padding:5px 0px" height="90px">
+      <h3>Historical Bethabara Park</h3>
+      <div class="linktoplace">
+        <a href="bethabarapark.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/old_salem.png" style="padding:0px 0px"  height="100px">
+      <h3>Old Salem</h3>
+      <div class="linktoplace">
+        <a href="oldsalem.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/reynolda_house.png" style="padding:15px 0px"  height="70px">
+      <h3>Reynolda House</h3>
+      <div class="linktoplace">
+        <a href="reynoldahouse.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/ReynoldsAuditorium.png" style="padding:10px 0px"  height="80px">
+      <h3>Reynolds Auditorium</h3>
+      <div class="linktoplace">
+        <a href="reynoldsauditorium.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/ReynoldsBuilding.png" style="padding:0px 0px"  height="100px">
+      <h3>Reynolds Building</h3>
+      <div class="linktoplace">
+        <a href="reynoldsbuilding.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+    <div id="card">
+      <img class="placeimage" src="images/icons/truist_ballpark.png" style="padding:5px 0px"  height="90px">
+      <h3>Truist Stadium</h3>
+      <div class="linktoplace">
+        <a href="truiststadium.html" target="_blank">
+         <h6 class="linktext">Visit</h6>
+          <div class="linkarrow"><i class='fas'>&#xf105;</i></div></a></div>
+    </div>
+  </div>
+</div>
+
+
+
+<footer>
+  <div class="footercontainer">
+    <a href="index.html"><img id="footerlogo" src="images/logos/logo_vertical.svg" width="150px">
+    </a>
+
+    <div class="footercontent">
+      <div>
+        <nav class="footerlinks">
+          <ul>
+            <li><a href="map.html">Map</a></li>
+            <br>
+            <li><a href="timeline.html">Timeline</a></li>
+            <br>
+            <li><a href="about.html">About</a></li>
+            <br>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div>
+      <nav class="footerlinks">
+        <ul>
+          <li>PLACES</li>
+          <br>
+        </ul>
+          <div class="footercontent">
+            <div>
+              <a class="footerplacelinks" href="bowmangraystadium.html"><p>Bowman Gray Stadium</p></a>
+              <a class="footerplacelinks" href="krispykreme.html"><p>Krispy Kreme</p></a>
+              <a class="footerplacelinks" href="bethabarapark.html"><p>Historic Bethabara Park</p></a>
+              <a class="footerplacelinks" href="oldsalem.html"><p>Old Salem</p></a>
+            </div>
+            <div>
+              <a class="footerplacelinks" href="reynoldahouse.html"><p>Reynolda House</p></a>
+              <a class="footerplacelinks" href="reynoldsauditorium.html"><p>Reynolds Auditorium</p></a>
+              <a class="footerplacelinks" href="reynoldsbuilding.html"><p>Reynolds Building</p></a>
+              <a class="footerplacelinks" href="truiststadium.html"><p>Truist Stadium</p></a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+  </div>
+</footer>
+
+
+<script>
+  var navigation = responsiveNav(".nav-collapse", {
+    animate: true, // Boolean: Use CSS3 transitions, true or false
+    transition: 284, // Integer: Speed of the transition, in milliseconds
+    label: "Menu", // String: Label for the navigation toggle
+    insert: "before", // String: Insert the toggle before or after the navigation
+    customToggle: "", // Selector: Specify the ID of a custom toggle
+    closeOnNavClick: false, // Boolean: Close the navigation when one of the links are clicked
+    openPos: "static", // String: Position of the opened nav, relative or static
+    navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!
+    navActiveClass: "js-nav-active", // String: Class that is added to <html> element when nav is active
+    jsClass: "js", // String: 'JS enabled' class which is added to <html> element
+    init: function () { }, // Function: Init callback
+    open: function () { }, // Function: Open callback
+    close: function () { } // Function: Close callback
+  });
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js/lightbox.js"></script>
+
+<script>
+  lightbox.option({
+    'disableScrolling': true,
+    'fadeDuration': 300,
+    'imageFadeDuration': 800,
+    'resizeDuration': 200,
+    'wrapAround': false
+  })
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
+  <title>Map</title>
+  <link rel="icon" href="images/favicon_ws.png">
+
+  <!-- Get access to fonts -->
+  <link rel="stylesheet" href="https://use.typekit.net/lbj8dzc.css">
+  <!-- Load external style sheet -->
+  <link href="css/reset.css" type="text/css" rel="stylesheet">
+  <link href="css/responsive-nav.css" type="text/css" rel="stylesheet">
+  <link href="css/lightbox.css" rel="stylesheet" />
+  <link href="css/style.css" type="text/css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/33003a8b85.js" crossorigin="anonymous"></script>
+
+<style>
+
+#mapcontainer{
+  position:relative;
+  margin-top: -10px;
+  margin-bottom:-55px;
+  overflow:scroll;
+  font-size: 1vw;
+  width: 100%;
+  height:auto;
+  max-height: 90vh;
+}
+
+#mapcontent{
+  position:relative;
+  margin-left: -100px;
+  width:100em;
+  z-index: 1;
+}
+
+#mapbackground{
+  display:inline-block;
+  opacity: 50%;
+  width: 110em;
+}
+
+.place{
+  position: absolute;
+  overflow: visible;
+  top: 0px;
+  left:0px;
+  white-space: nowrap;
+  z-index: 2;
+}
+
+.placetext{
+  position: relative;
+  overflow: visible;
+  margin-top:0.4em;
+  padding: 0.4em 0.8em;
+  z-index: 1;
+  font-family: museo-sans, sans-serif;
+  font-weight:500;
+  font-size: 1em;
+  font-style: normal;
+  line-height: 1.2em;
+  text-decoration: none;
+  color: white;
+  background-color: #4169c1;
+  white-space: nowrap;
+  word-break: keep-all;
+  border-radius: 0px 20px 20px 0px;
+  float:left;
+  transform: translateX(-20px);
+  opacity: 0%;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+}
+
+#bluehover{
+  position:absolute;
+  z-index:300;
+  opacity: 0%;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.3s;
+}
+
+#bwplace{
+  position: relative;
+  z-index:200;
+}
+
+#bowman{
+  width: 8em;
+  margin-top: 54.1em;
+  margin-left: 57.4em;
+}
+
+#bowmantext{
+  padding-left: 3.3em;
+  top: -2.9em;
+  left: 5.1em;
+}
+
+#krispykreme{
+  width: 8em;
+  margin-top: 47.1em;
+  margin-left: 28.8em;
+}
+
+#krispykremetext{
+  padding-left: 3.6em;
+  top: -2.9em;
+  left: 4.7em;
+}
+
+#bethabara{
+  width: 8em;
+  margin-top: 6.7em;
+  margin-left: 17.7em;
+}
+
+#bethabaratext{
+  padding-left: 3.2em;
+  top: -3em;
+  left: 4.8em;
+}
+
+#oldsalem{
+  width: 5em;
+  margin-top: 46.5em;
+  margin-left: 47.9em;
+}
+
+#oldsalemtext{
+  padding-left: 1.5em;
+  top: -4.1em;
+  left: 3.2em;
+}
+
+#reynolda{
+  width: 10em;
+  margin-top: 27.2em;
+  margin-left: 24.3em;
+}
+
+#reynoldatext{
+  padding-left: 3.2em;
+  top: -3.4em;
+  left: 7.2em;
+}
+
+#auditorium{
+  width: 8em;
+  margin-top: 38.7em;
+  margin-left: 33.4em;
+}
+
+#auditoriumtext{
+  padding-left: 3.2em;
+  top: -2.9em;
+  left: 5.1em;
+}
+
+#building{
+  width: 5em;
+  margin-top: 39.6em;
+  margin-left: 47.6em;
+}
+
+#buildingtext{
+  padding-left: 3.4em;
+  top: -2.6em;
+  left: 1.8em;
+}
+
+#ballpark{
+  width: 8em;
+  margin-top: 45.7em;
+  margin-left: 39.4em;
+}
+
+#ballparktext{
+  padding-left: 3.2em;
+  top: -3.5em;
+  left: 4.9em;
+}
+
+.place:hover #bluehover {
+  opacity: 100%;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+.place:hover .placetext {
+  transform: translateX(0px);
+  opacity: 100%;
+  transition-property: all;
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+}
+
+@media screen and (max-width: 1000px) {
+  #mapcontainer{
+    font-size: 1.2vw;
+  }
+
+  #mapcontent{
+    position:relative;
+    margin-left: -50px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #mapcontainer{
+    font-size: 2vw;
+  }
+
+  #mapcontent{
+    width:150%;
+    margin-left: -100px;
+  }
+}
+
+</style>
+
+<script src="js/responsive-nav.js"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="navigation">
+      <a href="index.html"><img id="navlogo" src="images/logos/logo_horizontal.svg" height="60px" width="200px">
+      </a>
+      <nav class="nav-collapse">
+        <ul>
+          <li><a href="map.html">Map</a></li>
+          <br class="br-on-mobile">
+          <li><a href="timeline.html">Timeline</a></li>
+          <br class="br-on-mobile">
+          <li><a href="about.html">About</a></li>
+          <br class="br-on-mobile">
+          <br class="br-on-mobile">
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<div id="mapcontainer">
+
+  <div id="mapcontent">
+
+    <img id="mapbackground" src="images/logos/map.svg" width="100%">
+
+    <a href="bowmangraystadium.html">
+      <div class="place" id="bowman">
+        <img id="bluehover" src="images/icons/blueversions/bowmangray_stadium_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/bowmangray_stadium.png" width="100%">
+        <p class="placetext" id="bowmantext">Bowman Gray Stadium</p>
+      </div>
+    </a>
+
+    <a href="bethabarapark.html">
+      <div class="place" id="bethabara">
+        <img id="bluehover" src="images/icons/blueversions/bethabara-park_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/bethabara-park.png" width="100%">
+        <p class="placetext" id="bethabaratext">Historic Bethabara Park</p>
+      </div>
+    </a>
+
+    <a href="oldsalem.html">
+      <div class="place" id="oldsalem">
+        <img id="bluehover" src="images/icons/blueversions/old_salem_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/old_salem.png" width="100%">
+        <p class="placetext" id="oldsalemtext">Old Salem</p>
+      </div>
+    </a>
+
+    <a href="reynoldahouse.html">
+      <div class="place" id="reynolda">
+        <img id="bluehover" src="images/icons/blueversions/reynolda_house_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/reynolda_house.png" width="100%">
+        <p class="placetext" id="reynoldatext">Reynolda House</p>
+      </div>
+    </a>
+
+    <a href="reynoldsbuilding.html">
+      <div class="place" id="building">
+        <img id="bluehover" src="images/icons/blueversions/ReynoldsBuilding_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/ReynoldsBuilding.png" width="100%">
+        <p class="placetext" id="buildingtext">Reynolds Building</p>
+      </div>
+    </a>
+
+    <a href="reynoldsauditorium.html">
+      <div class="place" id="auditorium">
+        <img id="bluehover" src="images/icons/blueversions/ReynoldsAuditorium_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/ReynoldsAuditorium.png" width="100%">
+        <p class="placetext" id="auditoriumtext">Reynolds Auitorium</p>
+      </div>
+    </a>
+
+    <a href="truiststadium.html">
+      <div class="place" id="ballpark">
+        <img id="bluehover" src="images/icons/blueversions/truist_ballpark_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/truist_ballpark.png" width="100%">
+        <p class="placetext" id="ballparktext">Truist Stadium</p>
+      </div>
+    </a>
+
+    <a href="krispykreme.html">
+      <div class="place" id="krispykreme">
+        <img id="bluehover" src="images/icons/blueversions/krispykreme_blue.png" width="100%">
+        <img id="bwplace" src="images/icons/krispykreme.png" width="100%">
+        <p class="placetext" id="krispykremetext">Krispy Kreme</p>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+<footer>
+  <div class="footercontainer">
+    <a href="index.html"><img id="footerlogo" src="images/logos/logo_vertical.svg" width="150px">
+    </a>
+
+    <div class="footercontent">
+      <div>
+        <nav class="footerlinks">
+          <ul>
+            <li><a href="map.html">Map</a></li>
+            <br>
+            <li><a href="timeline.html">Timeline</a></li>
+            <br>
+            <li><a href="about.html">About</a></li>
+            <br>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div>
+      <nav class="footerlinks">
+        <ul>
+          <li>PLACES</li>
+          <br>
+        </ul>
+          <div class="footercontent">
+            <div>
+              <a class="footerplacelinks" href="bowmangraystadium.html"><p>Bowman Gray Stadium</p></a>
+              <a class="footerplacelinks" href="krispykreme.html"><p>Krispy Kreme</p></a>
+              <a class="footerplacelinks" href="bethabarapark.html"><p>Historic Bethabara Park</p></a>
+              <a class="footerplacelinks" href="oldsalem.html"><p>Old Salem</p></a>
+            </div>
+            <div>
+              <a class="footerplacelinks" href="reynoldahouse.html"><p>Reynolda House</p></a>
+              <a class="footerplacelinks" href="reynoldsauditorium.html"><p>Reynolds Auditorium</p></a>
+              <a class="footerplacelinks" href="reynoldsbuilding.html"><p>Reynolds Building</p></a>
+              <a class="footerplacelinks" href="truiststadium.html"><p>Truist Stadium</p></a>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </div>
+
+  </div>
+</footer>
+
+
+<script>
+  var navigation = responsiveNav(".nav-collapse", {
+    animate: true, // Boolean: Use CSS3 transitions, true or false
+    transition: 284, // Integer: Speed of the transition, in milliseconds
+    label: "Menu", // String: Label for the navigation toggle
+    insert: "before", // String: Insert the toggle before or after the navigation
+    customToggle: "", // Selector: Specify the ID of a custom toggle
+    closeOnNavClick: false, // Boolean: Close the navigation when one of the links are clicked
+    openPos: "static", // String: Position of the opened nav, relative or static
+    navClass: "nav-collapse", // String: Default CSS class. If changed, you need to edit the CSS too!
+    navActiveClass: "js-nav-active", // String: Class that is added to <html> element when nav is active
+    jsClass: "js", // String: 'JS enabled' class which is added to <html> element
+    init: function () { }, // Function: Init callback
+    open: function () { }, // Function: Open callback
+    close: function () { } // Function: Close callback
+  });
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="js/lightbox.js"></script>
+
+<script>
+  lightbox.option({
+    'disableScrolling': true,
+    'fadeDuration': 300,
+    'imageFadeDuration': 800,
+    'resizeDuration': 200,
+    'wrapAround': false
+  })
+</script>
+
+</body>
+
+</html>
